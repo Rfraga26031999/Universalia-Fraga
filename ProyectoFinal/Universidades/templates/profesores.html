@@ -1,0 +1,14 @@
+{% extends 'padre.html' %}
+
+{% block titulo %}
+  Profesores
+{% endblock %}
+
+{% block cambia %}
+  <h3>Nuestros profesores:</h3>
+  {% for profesor in profesores %}
+    {{ profesor }}
+    <br>
+  {% endfor %}
+  <a class="btn btn-primary" href="{% url 'formulario_profesores' %}">Agregar profesor</a>
+{% endblock %}

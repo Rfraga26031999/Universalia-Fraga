@@ -1,0 +1,14 @@
+{% extends 'padre.html' %}
+
+{% block titulo %}
+  Carreras
+{% endblock %}
+
+{% block cambia %}
+  <h3>Estas son las carreras disponibles:</h3>
+  {% for carrera in carreras %}
+    {{ carrera }}
+    <br>
+  {% endfor %}
+  <a class="btn btn-primary" href="{% url 'formulario_carreras' %}">Agregar carrera</a>
+{% endblock %}

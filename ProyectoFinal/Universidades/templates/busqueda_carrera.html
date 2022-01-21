@@ -1,0 +1,12 @@
+{% extends 'padre.html' %}
+
+{% block titulo %}
+  Busqueda - Carreras
+{% endblock %}
+
+{% block cambia %}
+  <form action="{% url 'buscar' %}" method="GET">
+    <input type="text" name="carrera">
+    <input type="submit" value="Buscar">
+  </form>
+{% endblock %}
