@@ -1,0 +1,21 @@
+{% extends 'padre.html' %}
+
+{% block titulo %}
+  Borrar - Profesores
+{% endblock %}
+
+{% block cambia %}
+  <form action="" method="POST">
+    {% csrf_token %}
+    <ul>
+      <li>Nombre: {{profesor.nombre}}</li>
+      <li>Apellido: {{profesor.apellido}}</li>
+      <li>Email: {{profesor.email}}</li>
+      <li>Catedra: {{profesor.catedra}}</li>
+      <li>Materia dictada: {{profesor.materia_dictada}}</li>
+      <li>Edad: {{profesor.edad}}</li>
+      <li>DNI: {{profesor.dni}}</li>
+    </ul>
+    <input type="submit" value="Borrar">
+  </form>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'padre.html' %}
+
+{% block titulo %}
+  Ver Carrera
+{% endblock %}
+
+{% block cambia %}
+  <ul>
+    <li>Carrera: {{carrera.carrera}}</li>
+    <li>Duracion: {{carrera.duracion}}</li>
+    <li>Facultad: {{carrera.facultad}}</li>
+    <li>Materias: {{carrera.cantidad_materias}}</li>
+  </ul>
+  <a class="btn btn-primary" href="{% url 'carreras' %}">Volver</a>
+{% endblock %}

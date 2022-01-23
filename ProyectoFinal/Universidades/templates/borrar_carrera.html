@@ -1,0 +1,18 @@
+{% extends 'padre.html' %}
+
+{% block titulo %}
+  Borrar - Carreras
+{% endblock %}
+
+{% block cambia %}
+  <form action="" method="POST">
+    {% csrf_token %}
+    <ul>
+      <li>Carrera: {{carrera.carrera}}</li>
+      <li>Duracion: {{carrera.duracion}}</li>
+      <li>Facultad: {{carrera.facultad}}</li>
+      <li>Materias: {{carrera.cantidad_materias}}</li>
+    </ul>
+    <input type="submit" value="Borrar">
+  </form>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'padre.html' %}
+
+{% block titulo %}
+  Borrar - Estudiantes
+{% endblock %}
+
+{% block cambia %}
+  <form action="" method="POST">
+    {% csrf_token %}
+    <ul>
+      <li>Nombre: {{estudiante.nombre}}</li>
+      <li>Apellido: {{estudiante.apellido}}</li>
+      <li>Email: {{estudiante.email}}</li>
+      <li>Carrera: {{estudiante.carrera}}</li>
+      <li>Edad: {{estudiante.edad}}</li>
+      <li>DNI: {{estudiante.dni}}</li>
+      <li>Legajo: {{estudiante.legajo}}</li>
+    </ul>
+    <input type="submit" value="Borrar">
+  </form>
+{% endblock %}

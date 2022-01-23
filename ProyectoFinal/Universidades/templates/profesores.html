@@ -7,7 +7,9 @@
 {% block cambia %}
   <h3>Nuestros profesores:</h3>
   {% for profesor in profesores %}
-    {{ profesor }}
+    <a href="{% url 'ver_profesor' profesor.id %}">{{ profesor }}</a>
+    <a href="{% url 'borrar_profesores' profesor.id %}">Borrar</a>
+    <a href="{% url 'actualizar_profesores' profesor.id %}">Editar</a>
     <br>
   {% endfor %}
   <a class="btn btn-primary" href="{% url 'formulario_profesores' %}">Agregar profesor</a>

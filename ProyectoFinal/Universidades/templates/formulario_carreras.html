@@ -5,14 +5,14 @@
 {% endblock %}
 
 {% block cambia %}
-  {% if formulario_carreras.errors %}
-    <p style="color: red;">{{ formulario_carreras.errors }}</p>
+  {% if form.errors %}
+    <p style="color: red;">{{ form.errors }}</p>
   {% endif %}
 
   <form action="" method="POST">
   {% csrf_token %}
     <table>
-      {{ formulario_carreras.as_table }}
+      {{ form.as_table }}
     </table>
     <input type="submit" value="Enviar">
   </form>
