@@ -26,7 +26,7 @@ urlpatterns = [
     path('Universidades/', include('Universidades.urls')),
     path('login/', login_request, name = 'login'),
     path('registro/', UserCreateView.as_view(), name = 'registro'),
-    path('logout/', LogoutView.as_view(template_name = 'logout.html'), name = 'logout'),
+    path('logout/', LogoutView.as_view(template_name = 'usuario/logout.html'), name = 'logout'),
     path('', inicio, name = 'inicio'),
     path('user/edit/', editar_perfil, name = 'user_editar'),
 ]

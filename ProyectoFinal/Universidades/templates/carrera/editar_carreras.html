@@ -1,24 +1,28 @@
 {% extends 'padre.html' %}
 
 {% block titulo %}
-  Editar - Carrera
+  Editar - Estudiante
 {% endblock %}
 
 {% block cambia %}
   {% if form.errors %}
     <p style="color: red;">{{ form.errors }}</p>
   {% endif %}
-  <div class="container w-25 pt-1"></div>
-    <h3 class="text-center">Editar carrera</h3>
+  <div class="container-fluid w-25 pt-1">
+    <h3 class="text-center">Editar estudiante</h3>
     <form class="d-flex justify-content-center m-2" action="" method="POST">
-    {% csrf_token %}
-      <table>
-        {{ form.as_table }}
-      </table>
+      {% csrf_token %}
+      <div class="container">
+        <div class="row">
+          <table class="table">
+            {{ form.as_table }}
+          </table>
+          <div class="d-flex container text-center w-100 m-auto pb-3">
+            <input class="btn btn-dark mx-2 w-50" type="submit" value="Enviar">
+            <a class="btn btn-primary mx-2 w-50" href="{% url 'carreras' %}">Volver</a>
+          </div>
+        </div>
+      </div>
     </form>
-    <div class="container text-center w-50 flex-column m-auto pb-3">
-      <input class="btn btn-dark mx-2 w-25" type="submit" value="Enviar">
-      <a class="btn btn-primary mx-2 w-25" href="{% url 'carreras' %}">Volver</a>
-    </div>
   </div>
 {% endblock %}

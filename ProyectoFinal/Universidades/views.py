@@ -1,7 +1,5 @@
-from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
-
 from Universidades.forms import AvatarFormulario, FormularioProfesores, FormularioEstudiantes, FormularioCarreras
 from .models import Carrera, Estudiante, Profesor, Avatar
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
@@ -125,4 +123,4 @@ def agregar_avatar(request):
       return redirect('inicio')
   else:
     formulario = AvatarFormulario()
-  return render(request, 'crear_avatar.html', {'form': formulario})
+  return render(request, 'usuario/crear_avatar.html', {'form': formulario})
