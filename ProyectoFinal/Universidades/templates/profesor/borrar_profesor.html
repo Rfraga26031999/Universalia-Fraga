@@ -1,0 +1,29 @@
+{% extends 'padre.html' %}
+
+{% block titulo %}
+  Borrar - Profesor
+{% endblock %}
+
+{% block cambia %}
+  <form action="" method="POST">
+    {% csrf_token %}
+    <div class="container w-25 pt-1">
+      <h3 class="text-center">Borrar profesor</h3>
+      <div class="container d-flex justify-content-center">
+        <ul class="list-unstyled">
+          <li><b>Nombre:</b> {{profesor.nombre}}</li>
+          <li><b>Apellido:</b> {{profesor.apellido}}</li>
+          <li><b>Email:</b> {{profesor.email}}</li>
+          <li><b>Catedra:</b> {{profesor.catedra}}</li>
+          <li><b>Materia dictada:</b> {{profesor.materia_dictada}}</li>
+          <li><b>Edad:</b> {{profesor.edad}}</li>
+          <li><b>DNI:</b> {{profesor.dni}}</li>
+        </ul>
+      </div>
+      <div class="container d-flex justify-content-center align-items-center pb-2">
+        <input class="btn btn-dark mx-2" type="submit" value="Borrar">
+        <a class="btn btn-primary mx-2" href="{% url 'profesores' %}">Volver</a>
+      </div>
+    </div>
+  </form>
+{% endblock %}

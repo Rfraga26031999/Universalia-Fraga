@@ -1,0 +1,29 @@
+{% extends 'padre.html' %}
+
+{% block titulo %}
+  Borrar - Estudiante
+{% endblock %}
+
+{% block cambia %}
+  <form action="" method="POST">
+    {% csrf_token %}
+    <div class="container w-25 pt-1">
+      <h3 class="text-center">Borrar estudiante</h3>
+      <div class="container d-flex justify-content-center">
+        <ul class="list-unstyled">
+          <li><b>Nombre:</b> {{estudiante.nombre}}</li>
+          <li><b>Apellido:</b> {{estudiante.apellido}}</li>
+          <li><b>Email:</b> {{estudiante.email}}</li>
+          <li><b>Carrera:</b> {{estudiante.carrera}}</li>
+          <li><b>Edad:</b> {{estudiante.edad}}</li>
+          <li><b>DNI:</b> {{estudiante.dni}}</li>
+          <li><b>Legajo:</b> {{estudiante.legajo}}</li>
+        </ul>
+      </div>
+      <div class="container d-flex justify-content-center align-items-center pb-3">
+        <input class="btn btn-dark mx-2" type="submit" value="Borrar">
+        <a class="btn btn-primary mx-2" href="{% url 'estudiantes' %}">Volver</a>
+      </div>
+    </div>  
+  </form>
+{% endblock %}

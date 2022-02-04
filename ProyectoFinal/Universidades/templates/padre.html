@@ -27,11 +27,17 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="{% url 'inicio' %}">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'carreras' %}">Carreras</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'estudiantes' %}">Estudiantes</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'profesores' %}">Profesores</a></li>
-          </ul>
+            {% if not user.is_authenticated %}
+              <li class="nav-item"><a class="btn btn-primary" href="{% url 'login' %}">Iniciar</a></li>
+            {% else %}
+              <li class="nav-item"><a class="nav-link" href="{% url 'inicio' %}">Inicio</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'carreras' %}">Carreras</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'estudiantes' %}">Estudiantes</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'profesores' %}">Profesores</a></li>
+              <li class="nav-item"><a class="nav-link text-muted" href="{% url 'inicio' %}">Hola {{ user.username }}</a></li>
+              <img src="{{ avatar_url }}" class="mx-3 rounded-3" height="40px">
+              <li class="nav-item"><a class="btn btn-primary" href="{% url 'logout' %}">Logout</a></li>
+            {% endif %}
         </div>
       </div>
     </nav>

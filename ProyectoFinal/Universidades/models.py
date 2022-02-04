@@ -1,5 +1,6 @@
-from django.db.models import Model
+from django.db.models import Model, ForeignKey, CASCADE, ImageField
 from django.db.models.fields import CharField, IntegerField, EmailField, PositiveIntegerField, PositiveBigIntegerField, DecimalField
+from django.contrib.auth.models import User
 
 class Carrera(Model):
   carrera = CharField(max_length=100)
@@ -33,3 +34,10 @@ class Profesor(Model):
 
   def __str__(self):
       return f'{self.nombre} {self.apellido}'
+
+class Avatar(Model):
+  user = ForeignKey(User, on_delete=CASCADE)
+  imagen = ImageField(upload_to = 'avatares', null = True, blank = True)
+
+  def __str__(self):
+    return f'{self.user}'

@@ -1,0 +1,12 @@
+{% extends 'padre.html' %}
+
+{% block titulo %}
+  Logout
+{% endblock %}
+
+{% block cambia %}
+  <div class="container text-center">
+    <h3 class="pt-2">¡Gracias por visitarnos!</h3>
+    <a class="btn btn-primary" href="{% url 'login' %}">Loguearse nuevamente</a>
+  </div>  
+{% endblock %}

@@ -1,5 +1,5 @@
 from django.urls import path
-from Universidades.views import inicio, ProfesorListView, busqueda_carrera, buscar, ProfesorCreateView, ProfesorUpdateView, ProfesorDeleteView, ProfesorDetailView, EstudianteCreateView, EstudianteDeleteView, EstudianteDetailView, EstudianteListView, EstudianteUpdateView, CarreraCreateView, CarreraDeleteView, CarreraDetailView, CarreraListView, CarreraUpdateView
+from Universidades.views import inicio, ProfesorListView, busqueda_carrera, buscar, ProfesorCreateView, ProfesorUpdateView, ProfesorDeleteView, ProfesorDetailView, EstudianteCreateView, EstudianteDeleteView, EstudianteDetailView, EstudianteListView, EstudianteUpdateView, CarreraCreateView, CarreraDeleteView, CarreraDetailView, CarreraListView, CarreraUpdateView, agregar_avatar
 
 urlpatterns = [
     path('inicio/', inicio, name = 'inicio'),
@@ -12,12 +12,13 @@ urlpatterns = [
     path('busquedacarrera/', busqueda_carrera, name = 'busqueda_carrera'),
     path('buscar/', buscar, name = 'buscar'),
     path('borrarprofesores/<pk>', ProfesorDeleteView.as_view(), name = 'borrar_profesores'),
-    path('actualizarprofesores/<pk>', ProfesorUpdateView.as_view(), name = 'actualizar_profesores'),
+    path('editarprofesores/<pk>', ProfesorUpdateView.as_view(), name = 'editar_profesor'),
     path('verprofesor/<pk>', ProfesorDetailView.as_view(), name = 'ver_profesor'),
     path('borrarestudiantes/<pk>', EstudianteDeleteView.as_view(), name = 'borrar_estudiantes'),
-    path('actualizarestudiantes/<pk>', EstudianteUpdateView.as_view(), name = 'actualizar_estudiantes'),
+    path('editarestudiantes/<pk>', EstudianteUpdateView.as_view(), name = 'editar_estudiantes'),
     path('verestudiante/<pk>', EstudianteDetailView.as_view(), name = 'ver_estudiante'),
     path('borrarcarreras/<pk>', CarreraDeleteView.as_view(), name = 'borrar_carreras'),
-    path('actualizarcarreras/<pk>', CarreraUpdateView.as_view(), name = 'actualizar_carreras'),
+    path('editarcarreras/<pk>', CarreraUpdateView.as_view(), name = 'editar_carreras'),
     path('vercarrera/<pk>', CarreraDetailView.as_view(), name = 'ver_carrera'),
+    path('user/avatar/add/', agregar_avatar, name = 'avatar_add'),
 ]

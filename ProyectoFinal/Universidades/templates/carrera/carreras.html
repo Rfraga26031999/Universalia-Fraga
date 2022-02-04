@@ -1,0 +1,25 @@
+{% extends 'padre.html' %}
+
+{% block titulo %}
+  Carreras
+{% endblock %}
+
+{% block cambia %}
+  <div class="container-fluid d-grid align-items-center justify-content-center w-50">
+    <h3 class="pt-2 text-center">Carreras disponibles:</h3>
+    {% for carrera in carreras %}
+    <div class="container-fluid pb-3">
+      <div class="row">
+        <div class="col-7 d-flex align-items-center">
+          <a class="text-decoration-none text-dark text-start" href="{% url 'ver_carrera' carrera.id %}">{{ carrera }}</a>
+        </div>
+        <div class="col-5 d-flex justify-content-center">
+          <button class="btn btn-primary mx-2"><a class="d-block text-white text-decoration-none" href="{% url 'borrar_carreras' carrera.id %}">Borrar</a></button>
+          <button class="btn btn-primary"><a class="d-block text-white text-decoration-none" href="{% url 'editar_carreras' carrera.id %}">Editar</a></button>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <a class="d-flex btn btn-dark mb-3 w-50 m-auto justify-content-center" href="{% url 'formulario_carreras' %}">Agregar carrera</a>
+  </div>
+{% endblock %}

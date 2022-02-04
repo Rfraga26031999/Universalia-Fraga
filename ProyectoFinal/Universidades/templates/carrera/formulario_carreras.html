@@ -1,0 +1,24 @@
+{% extends 'padre.html' %}
+
+{% block titulo %}
+  Formulario - Carreras
+{% endblock %}
+
+{% block cambia %}
+  {% if form.errors %}
+    <p style="color: red;">{{ form.errors }}</p>
+  {% endif %}
+  <div class="container w-25 pt-1"></div>
+    <h3 class="text-center">Agregar carrera</h3>
+    <form class="d-flex justify-content-center m-2" action="" method="POST">
+    {% csrf_token %}
+      <table>
+        {{ form.as_table }}
+      </table>
+    </form>
+    <div class="container text-center w-50 flex-column m-auto pb-3">
+      <input class="btn btn-dark mx-2 w-25" type="submit" value="Enviar">
+      <a class="btn btn-primary mx-2 w-25" href="{% url 'carreras' %}">Volver</a>
+    </div>
+  </div>
+{% endblock %}

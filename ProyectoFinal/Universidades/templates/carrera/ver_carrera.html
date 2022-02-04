@@ -1,0 +1,18 @@
+{% extends 'padre.html' %}
+
+{% block titulo %}
+  Ver - carrera
+{% endblock %}
+
+{% block cambia %}
+  <div class="container w-25 pt-1">
+    <h3 class="text-center">Ver carrera</h3>
+    <ul class="list-unstyled">
+      <li><b>Carrera:</b> {{carrera.carrera}}</li>
+      <li><b>Duracion:</b> {{carrera.duracion}} años</li>
+      <li><b>Facultad:</b> {{carrera.facultad}}</li>
+      <li><b>Materias:</b> {{carrera.cantidad_materias}}</li>
+    </ul>
+    <a class="d-block btn btn-dark mb-3" href="{% url 'carreras' %}">Volver</a>
+  </div>
+{% endblock %}

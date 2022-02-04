@@ -15,8 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from ProyectoFinal.views import login_request, UserCreateView, editar_perfil
+from django.contrib.auth.views import LogoutView
+from Universidades.views import inicio
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('Universidades/', include('Universidades.urls'))
+    path('Universidades/', include('Universidades.urls')),
+    path('login/', login_request, name = 'login'),
+    path('registro/', UserCreateView.as_view(), name = 'registro'),
+    path('logout/', LogoutView.as_view(template_name = 'logout.html'), name = 'logout'),
+    path('', inicio, name = 'inicio'),
+    path('user/edit/', editar_perfil, name = 'user_editar'),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

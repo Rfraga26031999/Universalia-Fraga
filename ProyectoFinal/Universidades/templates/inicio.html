@@ -5,5 +5,11 @@
 {% endblock %}
 
 {% block cambia %}
-  <h3>Bienvenido a Universalia!</h3>
+  <div class="container text-center">
+    <h3 class="pt-3">¡Bienvenido a Universalia!</h3>
+    <form class="d-flex justify-content-center pb-2">
+      <input class="form-control me-2 w-auto mx-1 mb-2" type="search" placeholder="¿Qué desea buscar?" aria-label="Search" name="buscar">
+      <button class="btn btn-primary mb-2" type="submit">Buscar</button>
+    </form>
+  </div>
 {% endblock %}

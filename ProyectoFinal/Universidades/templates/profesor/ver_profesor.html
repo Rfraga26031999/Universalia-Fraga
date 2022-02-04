@@ -1,0 +1,20 @@
+{% extends 'padre.html' %}
+
+{% block titulo %}
+  Ver Profesor
+{% endblock %}
+
+{% block cambia %}
+  <div class="container w-25 pt-1">
+    <ul>
+      <li><b>Nombre:</b> {{profesor.nombre}}</li>
+      <li><b>Apellido:</b> {{profesor.apellido}}</li>
+      <li><b>Email:</b> {{profesor.email}}</li>
+      <li><b>Catedra:</b> {{profesor.catedra}}</li>
+      <li><b>Materia dictada:</b> {{profesor.materia_dictada}}</li>
+      <li><b>Edad:</b> {{profesor.edad}}</li>
+      <li><b>DNI:</b> {{profesor.dni}}</li>
+    </ul>
+    <a class="d-block btn btn-dark m-2" href="{% url 'profesores' %}">Volver</a>
+  </div>
+{% endblock %}
