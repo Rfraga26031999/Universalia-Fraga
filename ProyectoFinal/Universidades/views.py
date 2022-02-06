@@ -2,7 +2,7 @@ from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from Universidades.forms import AvatarFormulario, FormularioProfesores, FormularioEstudiantes, FormularioCarreras
 from .models import Carrera, Estudiante, Profesor, Avatar
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
@@ -124,3 +124,19 @@ def agregar_avatar(request):
   else:
     formulario = AvatarFormulario()
   return render(request, 'usuario/crear_avatar.html', {'form': formulario})
+
+class Error404(TemplateView):
+  template_name = 'errores/404.html'
+
+class Error500(TemplateView):
+  template_name = 'errores/500.html'
+
+  @classmethod
+  def as_error_view(cls):
+
+    v = cls.as_view()
+    def view(request):
+      r = v(request)
+      r.render()
+      return r
+    return view

@@ -20,5 +20,5 @@ urlpatterns = [
     path('borrarcarreras/<pk>', CarreraDeleteView.as_view(), name = 'borrar_carreras'),
     path('editarcarreras/<pk>', CarreraUpdateView.as_view(), name = 'editar_carreras'),
     path('vercarrera/<pk>', CarreraDetailView.as_view(), name = 'ver_carrera'),
-    path('user/avatar/add/', agregar_avatar, name = 'avatar_add'),
+    path('agregaravatar/', agregar_avatar, name = 'agregar_avatar'),
 ]

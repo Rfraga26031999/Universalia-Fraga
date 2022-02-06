@@ -2,8 +2,8 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
-from .forms import UserRegisterForm, UserEditForm
-from django.views.generic import CreateView, DetailView
+from .forms import UserRegisterForm, UserChangePasswordForm, UserProfileForm
+from django.views.generic import CreateView, UpdateView
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
@@ -33,23 +33,31 @@ class UserCreateView(CreateView):
   template_name = 'usuario/registro.html'
   form_class = UserRegisterForm
 
-@login_required
-def editar_perfil(request):
-  usuario = request.user
-  if request.method == 'POST':
-    formulario = UserEditForm(request.POST)
-    if formulario.is_valid():
-      data = formulario.cleaned_data
-      usuario.email = data['email']
-      usuario.set_password(data['password1'])
-      usuario.first_name = data['first_name']
-      usuario.last_name = data['last_name']
-      usuario.save()
-      return redirect('inicio')
-  else:
-    formulario = UserEditForm({'email': usuario.email})
-  return render(request, 'usuario/editar_perfil.html', {'form': formulario})
+class UserChangeView(AvatarView, UpdateView):
+  form_class = UserProfileForm
+  template_name = 'usuario/miperfil.html'
+  success_url = reverse_lazy('inicio')
+
+  def get_object(self):
+      return self.request.user
 
 class UserLoginView(LoginView):
   template_name = 'usuario/login.html'
   next_page = reverse_lazy('inicio')
+
+@login_required
+def cambiar_contraseña(request):
+  usuario = request.user
+  if request.method == 'POST':
+    formulario = UserChangePasswordForm(request.POST)
+    if formulario.is_valid():
+      data = formulario.cleaned_data
+      usuario.set_password(data['password1'])
+      usuario.save()
+      return redirect('inicio')
+  else:
+    formulario = UserChangePasswordForm({'email': usuario.email})
+  return render(request, 'usuario/cambiar_contraseña.html', {'form': formulario})
+
+def aboutme(request):
+  return render(request, 'aboutme.html')

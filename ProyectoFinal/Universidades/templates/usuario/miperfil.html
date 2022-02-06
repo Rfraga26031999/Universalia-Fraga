@@ -1,13 +1,13 @@
 {% extends 'padre.html' %}
 
 {% block titulo %}
-  Formulario - Carreras
+  Mi perfil
 {% endblock %}
 
 {% block cambia %}
-<h3 class="masthead-subheading mb-0 py-4">Encontra, agrega, estudia.</h3>
-  <div class="container-fluid w-50 bg-dark rounded mt-4" style="--bs-bg-opacity: .8;">
-    <h3 class="text-center">Agregar carrera</h3>
+  <h3 class="masthead-subheading mb-0 pb-4">Se nos debe enseñar a pensar, no a qué pensar.</h3>
+  <div class="container-fluid w-75 pt-2 bg-dark rounded" style="--bs-bg-opacity: .8;">
+    <h3 class="text-center">Mi perfil</h3>
     <form class="d-flex justify-content-center m-2" action="" method="POST">
       {% csrf_token %}
       <div class="container">
@@ -17,7 +17,8 @@
           </table>
           <div class="container text-center w-100 d-flex m-auto pb-3">
             <input class="btn btn-dark mx-2 w-50" type="submit" value="Enviar">
-            <a class="btn btn-primary mx-2 w-50" href="{% url 'carreras' %}">Volver</a>
+            <a class="btn btn-primary mx-2 w-50" href="{% url 'agregar_avatar' %}">Editar avatar</a>
+            <a class="btn btn-primary mx-2 w-50" href="{% url 'cambiar_contraseña' %}">Cambiar contraseña</a>
           </div>
         </div>
       </div>

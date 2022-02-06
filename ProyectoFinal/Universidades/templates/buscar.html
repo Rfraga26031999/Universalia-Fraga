@@ -4,17 +4,17 @@
   Buscar
 {% endblock %}
 
-{% block cambia %}
-  <form class="d-flex">
-    <input class="form-control me-2 w-auto mx-1 mb-2" type="search" placeholder="¿Qué desea buscar?" aria-label="Search" name="buscar">
-    <button class="btn btn-outline-success mb-2" type="submit">Buscar</button>
-  </form>
+{% block error %}
+<form class="d-flex">
+  <input class="form-control me-2 w-auto mx-1 mb-2" type="search" placeholder="¿Qué desea buscar?" aria-label="Search" name="buscar">
+  <button class="btn btn-outline-success mb-2" type="submit">Buscar</button>
+</form>
 
-  {% if estudiantes %}
-    <ul>
-      {% for estudiante in estudiantes %}
-        <li>{{ estudiante }}</li>
-      {% endfor %}
-    </ul>
-  {% endif %}
+{% if estudiantes %}
+  <ul>
+    {% for estudiante in estudiantes %}
+      <li>{{ estudiante }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
 {% endblock %}

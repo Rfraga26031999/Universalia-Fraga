@@ -1,0 +1,11 @@
+{% extends 'padre.html' %}
+
+{% block titulo %}
+  Error 404
+{% endblock %}
+
+{% block cambia %}
+  <h1 class="masthead-heading mb-0 text-dark py-5">Error 404</h1>
+  <h2 class="masthead-subheading mb-0 text-dark pb-3">Lo sentimos, esta página no existe o no pudimos encontrarla</h2>
+  <a class="btn btn-dark btn-xl rounded-pill mt-5 " href="{% url 'inicio' %}">Vuelva a nuestra pagina de inicio</a>
+{% endblock %}

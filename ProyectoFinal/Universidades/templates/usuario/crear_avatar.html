@@ -1,21 +1,27 @@
 {% extends 'padre.html' %}
 
 {% block titulo %}
-  Crear Avatar
+  Avatar
 {% endblock %}
 
 {% block cambia %}
-  {% if form.errors %}
-    <p style="color: red;">{{ form.errors }}</p>
-  {% endif %}
-
-  <form action="" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    <h3>Agregar o editar avatar:</h3>
-    <table>
-      {{ form.as_table }}
-    </table>
-    <br>
-    <input type="submit" value="Subir imagen">
-  </form>
+  <h2 class="masthead-heading mb-0">El cambio sos vos</h2>
+  <h3 class="masthead-subheading mb-0 pb-4">Creando hoy, los lideres del mañana.</h3>
+  <div class="container-fluid w-50 pt-1 bg-dark rounded mt-4" style="--bs-bg-opacity: .8;">
+    <h3 class="text-center">Agregar o editar avatar</h3>
+    <form class="d-flex justify-content-center m-2" action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="container">
+        <div class="row">
+          <table class="table text-light text-start d-flex justify-content-center">
+            {{ form.as_table }}
+          </table>
+          <div class="container text-center w-100 d-flex m-auto pb-3">
+            <input class="btn btn-dark mx-2 w-50" type="submit" value="Subir imagen">
+            <a class="btn btn-primary mx-2 w-50" href="{% url 'miperfil' %}">Volver</a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
 {% endblock %}

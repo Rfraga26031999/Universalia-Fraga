@@ -1,13 +1,13 @@
 {% extends 'padre.html' %}
 
 {% block titulo %}
-  Login
+  Cambiar contraseña
 {% endblock %}
 
 {% block cambia %}
-  <h2 class="masthead-heading mb-0 pb-4">Cambia tu mente, cambia al mundo.</h2>
+  <h2 class="masthead-heading mb-0 pb-4">Despertando mentes Universalia</h2>
   <div class="container-fluid w-50 pt-1 bg-dark rounded" style="--bs-bg-opacity: .8;">
-    <h3 class="text-center">Login</h3>
+    <h3 class="text-center">Cambiar contraseña</h3>
     <form class="d-flex justify-content-center m-2" action="" method="POST">
       {% csrf_token %}
       <div class="container">
@@ -15,9 +15,9 @@
           <table class="table text-light text-start d-flex justify-content-center">
             {{ form.as_table }}
           </table>
-          <div class="container text-center w-100 d-flex m-auto py-3">
-            <input class="btn btn-dark mx-2 w-50" type="submit" value="Iniciar sesión">
-            <a class="btn btn-primary mx-2 w-50" href="{% url 'registro' %}">Registrarse</a>
+          <div class="container text-center w-100 d-flex justify-content-center m-auto py-3">
+            <input class="btn btn-dark mx-2 w-50" type="submit" value="Enviar">
+            <a class="btn btn-primary mx-2 w-50" href="{% url 'miperfil' %}">Volver</a>
           </div>
         </div>
       </div>

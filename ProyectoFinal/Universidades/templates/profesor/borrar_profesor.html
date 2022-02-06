@@ -5,25 +5,26 @@
 {% endblock %}
 
 {% block cambia %}
-  <form action="" method="POST">
-    {% csrf_token %}
-    <div class="container w-25 pt-1">
-      <h3 class="text-center">Borrar profesor</h3>
-      <div class="container d-flex justify-content-center">
-        <ul class="list-unstyled">
-          <li><b>Nombre:</b> {{profesor.nombre}}</li>
-          <li><b>Apellido:</b> {{profesor.apellido}}</li>
-          <li><b>Email:</b> {{profesor.email}}</li>
-          <li><b>Catedra:</b> {{profesor.catedra}}</li>
-          <li><b>Materia dictada:</b> {{profesor.materia_dictada}}</li>
-          <li><b>Edad:</b> {{profesor.edad}}</li>
-          <li><b>DNI:</b> {{profesor.dni}}</li>
-        </ul>
-      </div>
-      <div class="container d-flex justify-content-center align-items-center pb-2">
-        <input class="btn btn-dark mx-2" type="submit" value="Borrar">
-        <a class="btn btn-primary mx-2" href="{% url 'profesores' %}">Volver</a>
-      </div>
+<h3 class="masthead-subheading mb-0 pb-4">Lo importante es no dejar de hacerse preguntas.</h3>
+<form action="" method="POST">
+  {% csrf_token %}
+  <div class="container w-50 pt-1 bg-dark rounded" style="--bs-bg-opacity: .8;">
+    <h3 class="text-center">Borrar profesor</h3>
+    <div class="container d-flex justify-content-center ps-5">
+      <ul class="list-unstyled">
+        <li class="text-start">Nombre: <b class="text-danger">{{profesor.nombre}}</b></li>
+        <li class="text-start">Apellido: <b class="text-danger">{{profesor.apellido}}</b></li>
+        <li class="text-start">Email: <b class="text-danger">{{profesor.email}}</b></li>
+        <li class="text-start">Catedra: <b class="text-danger">{{profesor.catedra}}</b></li>
+        <li class="text-start">Materia dictada: <b class="text-danger">{{profesor.materia_dictada}}</b></li>
+        <li class="text-start">Edad: <b class="text-danger">{{profesor.edad}}</b></li>
+        <li class="text-start">DNI: <b class="text-danger">{{profesor.dni}}</b></li>
+      </ul>
     </div>
-  </form>
+    <div class="container d-flex justify-content-center align-items-center pb-2">
+      <input class="btn btn-dark mx-2" type="submit" value="Borrar">
+      <a class="btn btn-primary mx-2" href="{% url 'profesores' %}">Volver</a>
+    </div>
+  </div>
+</form>
 {% endblock %}

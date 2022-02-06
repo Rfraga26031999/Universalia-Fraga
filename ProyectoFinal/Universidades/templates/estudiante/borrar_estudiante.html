@@ -5,22 +5,23 @@
 {% endblock %}
 
 {% block cambia %}
+  <h3 class="masthead-subheading mb-0 pb-4">Donde hay educación no hay distinción de clases.</h3>
   <form action="" method="POST">
     {% csrf_token %}
-    <div class="container w-25 pt-1">
+    <div class="container w-50 pt-1 bg-dark rounded" style="--bs-bg-opacity: .8;">
       <h3 class="text-center">Borrar estudiante</h3>
-      <div class="container d-flex justify-content-center">
+      <div class="container d-flex justify-content-center ps-5">
         <ul class="list-unstyled">
-          <li><b>Nombre:</b> {{estudiante.nombre}}</li>
-          <li><b>Apellido:</b> {{estudiante.apellido}}</li>
-          <li><b>Email:</b> {{estudiante.email}}</li>
-          <li><b>Carrera:</b> {{estudiante.carrera}}</li>
-          <li><b>Edad:</b> {{estudiante.edad}}</li>
-          <li><b>DNI:</b> {{estudiante.dni}}</li>
-          <li><b>Legajo:</b> {{estudiante.legajo}}</li>
+          <li class="text-start">Nombre: <b class="text-danger">{{estudiante.nombre}}</b></li>
+          <li class="text-start">Apellido: <b class="text-danger">{{estudiante.apellido}}</b></li>
+          <li class="text-start">Email: <b class="text-danger">{{estudiante.email}}</b></li>
+          <li class="text-start">Carrera: <b class="text-danger">{{estudiante.carrera}}</b></li>
+          <li class="text-start">Edad: <b class="text-danger">{{estudiante.edad}}</b></li>
+          <li class="text-start">DNI: <b class="text-danger">{{estudiante.dni}}</b></li>
+          <li class="text-start">Legajo: <b class="text-danger">{{estudiante.legajo}}</b></li>
         </ul>
       </div>
-      <div class="container d-flex justify-content-center align-items-center pb-3">
+      <div class="container d-flex justify-content-center align-items-center pb-2">
         <input class="btn btn-dark mx-2" type="submit" value="Borrar">
         <a class="btn btn-primary mx-2" href="{% url 'estudiantes' %}">Volver</a>
       </div>

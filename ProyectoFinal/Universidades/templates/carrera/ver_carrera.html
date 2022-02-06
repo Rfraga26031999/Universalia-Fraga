@@ -5,14 +5,20 @@
 {% endblock %}
 
 {% block cambia %}
-  <div class="container w-25 pt-1">
+  <h2 class="masthead-heading mb-0">¿Sos estudiante?</h2>
+  <h3 class="masthead-subheading mb-0 pb-4">¡Encontra donde estudiar en Universalia!</h3>
+  <div class="container w-50 pt-2 bg-dark rounded" style="--bs-bg-opacity: .8;">
     <h3 class="text-center">Ver carrera</h3>
-    <ul class="list-unstyled">
-      <li><b>Carrera:</b> {{carrera.carrera}}</li>
-      <li><b>Duracion:</b> {{carrera.duracion}} años</li>
-      <li><b>Facultad:</b> {{carrera.facultad}}</li>
-      <li><b>Materias:</b> {{carrera.cantidad_materias}}</li>
-    </ul>
-    <a class="d-block btn btn-dark mb-3" href="{% url 'carreras' %}">Volver</a>
+    <div class="container d-flex justify-content-center ps-5">
+      <ul class="list-unstyled">
+        <li class="text-start">Carrera: <b class="text-danger">{{carrera.carrera}}</b></li>
+        <li class="text-start">Duracion: <b class="text-danger">{{carrera.duracion}} años</b></li>
+        <li class="text-start">Facultad: <b class="text-danger">{{carrera.facultad}}</b></li>
+        <li class="text-start">Materias: <b class="text-danger">{{carrera.cantidad_materias}}</b></li>
+      </ul>
+    </div>
+    <div class="container d-flex justify-content-center align-items-center pb-2">
+      <a class="d-block btn btn-dark m-2 w-50" href="{% url 'carreras' %}">Volver</a>
+    </div>
   </div>
 {% endblock %}

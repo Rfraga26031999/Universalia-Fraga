@@ -1,0 +1,32 @@
+{% extends 'padre.html' %}
+
+{% block titulo %}
+  About me
+{% endblock %}
+
+{% block cambia %}
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <h2 class="text-center py-2">About me</h2>
+    <div class="card mb-3 px-0 bg-dark" style="--bs-bg-opacity: .8; width: auto; height: auto;">
+      <div class="row g-0">
+        <div class="col-md-4 text-center d-flex align-items-center">
+          <img src="../../media/avatares/rogelio.jpeg" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title fst-italic">Rogelio Fraga</h5>
+            <p class="card-text text-start">Una vez me dijeron que era un "popurrí", creo que es una definición bastante aproximada de como soy jajaja.</p>
+            <p class="card-text text-start ">Me gusta escribir, tanto reflexiones como letras de rap. Hace casi un año compusimos una cancion con un amigo productor, dejo el link por aca: <a href="https://www.youtube.com/watch?v=r6QHx0261-Y&ab_channel=Fraga-Topic">Fraga - Decisiones</a></p>
+            <p class="card-text text-start">Estudié distintas cosas. Al terminar el secundario me anote en Filosofía, la cual me gustaba pero me decepciono la idea al darme cuenta de que no era viable económicamente.</p>
+            <p class="card-text text-start">Por lo tanto, me dedique al negocio gastronomico familiar mientras probaba con distintas carreras que no me gustaron tanto (Producción musical y Gastronomía) y otras que si me gustaron (Contador Público y Finanzas) pero la idea de trabajar ligado fisicamente a una oficina me llevó a dejarlas.</p>
+            <p class="card-text text-start">Actualmente soy estudiante de la Lic. Administración en la UBA y realizo cursos de programación por mi cuenta, me interesa la idea de mezclar los negocios con la programación y llevarlo a un trabajo independiente donde pueda manejar mis tiempos sin la necesidad de estar fisicamente en un lugar.</p>
+            <p class="card-text text-end fst-italic text-danger">"La vida comienza donde el miedo termina" - Osho</p>
+            <!-- <p class="card-text text-end"><small class="text-danger">Rogelio Fraga - Universalia</small></p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -5,13 +5,14 @@
 {% endblock %}
 
 {% block cambia %}
-  <div class="container-fluid d-grid align-items-center justify-content-center w-50">
+  <h3 class="masthead-subheading mb-0 py-4">¿Tu futuro? ¡Universalia!</h3>
+  <div class="container-fluid d-grid align-items-center justify-content-center w-50 bg-dark rounded" style="--bs-bg-opacity: .8;">
     <h3 class="pt-2 text-center">Carreras disponibles:</h3>
     {% for carrera in carreras %}
     <div class="container-fluid pb-3">
       <div class="row">
         <div class="col-7 d-flex align-items-center">
-          <a class="text-decoration-none text-dark text-start" href="{% url 'ver_carrera' carrera.id %}">{{ carrera }}</a>
+          <a class="text-decoration-none text-danger text-start" href="{% url 'ver_carrera' carrera.id %}">{{ carrera }}</a>
         </div>
         <div class="col-5 d-flex justify-content-center">
           <button class="btn btn-primary mx-2"><a class="d-block text-white text-decoration-none" href="{% url 'borrar_carreras' carrera.id %}">Borrar</a></button>
