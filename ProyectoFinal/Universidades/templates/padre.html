@@ -36,7 +36,11 @@
               <li class="nav-item"><a class="nav-link" href="{% url 'profesores' %}">Profesores</a></li>
               <li class="nav-item"><a class="nav-link" href="{% url 'miperfil' %}">Mi perfil</a></li>
               <li class="nav-item"><a class="nav-link text-muted" href="{% url 'inicio' %}">Hola {{ user.username }}</a></li>
-              <img src="{{ avatar_url }}" class="mx-3 rounded-3" height="40px">
+            {% if avatar_url %}
+              <img src="{{ avatar_url }}" class="mx-3 rounded-3" height="40px" width="40px">
+            {% else %}
+              <img src="{% static 'Universidades/assets/default.jfif' %}" class="mx-3 rounded-3" height="40px" width="40px">
+            {% endif %}
               <li class="nav-item"><a class="btn btn-primary" href="{% url 'logout' %}">Logout</a></li>
             {% endif %}
         </div>

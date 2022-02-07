@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db.models import Model, ForeignKey, CASCADE, ImageField
 from django.db.models.fields import CharField, IntegerField, EmailField, PositiveIntegerField, PositiveBigIntegerField, DecimalField
 from django.contrib.auth.models import User

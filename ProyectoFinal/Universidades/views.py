@@ -5,7 +5,7 @@ from .models import Carrera, Estudiante, Profesor, Avatar
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
-from django.db.models import Q
+from django.http import HttpResponse
 
 
 def inicio(request):
@@ -28,16 +28,14 @@ def carreras(request):
 def profesores(request):
   return render(request, 'profesores.html', {'profesores': Profesor.objects.all()})
 
-def busqueda_carrera(request):
-  return render(request, 'busqueda_carrera.html')
-
 def buscar(request):
-  carrera = request.GET.get("carrera")
-  estudiantes = Estudiante.objects.filter(carrera = carrera)
-  if carrera:
-    estudiantes = Estudiante.objects.filter(Q(titulo__icontains = carrera), Q(descripcion__icontains = carrera)).distinct()
-  return render(request, 'buscar.html', {'carrera': carrera, 'estudiantes': estudiantes})
-
+  if request.method == "POST":
+    busqueda = request.POST["busqueda"]
+    estudiante = Estudiante.objects.filter(carrera__icontains=busqueda)
+    return render(request, 'buscar.html', {'busqueda': busqueda, 'estudiante': estudiante})
+  else:
+    respuesta = 'La busqueda no es valida'
+  return HttpResponse(respuesta)
 class AvatarView:
   def get_context_data(self, **kwargs):
     contexto = super().get_context_data(**kwargs)

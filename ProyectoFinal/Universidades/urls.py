@@ -1,5 +1,5 @@
 from django.urls import path
-from Universidades.views import inicio, ProfesorListView, busqueda_carrera, buscar, ProfesorCreateView, ProfesorUpdateView, ProfesorDeleteView, ProfesorDetailView, EstudianteCreateView, EstudianteDeleteView, EstudianteDetailView, EstudianteListView, EstudianteUpdateView, CarreraCreateView, CarreraDeleteView, CarreraDetailView, CarreraListView, CarreraUpdateView, agregar_avatar
+from Universidades.views import inicio, ProfesorListView, buscar, ProfesorCreateView, ProfesorUpdateView, ProfesorDeleteView, ProfesorDetailView, EstudianteCreateView, EstudianteDeleteView, EstudianteDetailView, EstudianteListView, EstudianteUpdateView, CarreraCreateView, CarreraDeleteView, CarreraDetailView, CarreraListView, CarreraUpdateView, agregar_avatar
 
 urlpatterns = [
     path('inicio/', inicio, name = 'inicio'),
@@ -9,7 +9,6 @@ urlpatterns = [
     path('formularioestudiantes/', EstudianteCreateView.as_view(), name = 'formulario_estudiantes'),
     path('formulariocarreras/', CarreraCreateView.as_view(), name = 'formulario_carreras'),
     path('formularioprofesores/', ProfesorCreateView.as_view(), name = 'formulario_profesores'),
-    path('busquedacarrera/', busqueda_carrera, name = 'busqueda_carrera'),
     path('buscar/', buscar, name = 'buscar'),
     path('borrarprofesores/<pk>', ProfesorDeleteView.as_view(), name = 'borrar_profesores'),
     path('editarprofesores/<pk>', ProfesorUpdateView.as_view(), name = 'editar_profesor'),
