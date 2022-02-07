@@ -10,7 +10,7 @@ Para inicializar el proyecto hay varias opciones, te dejo las dos mas convenient
 
 Deberas ir al repositorio de GitHub donde aparecera un boton desplegable _Code_, una vez ahi en la solapa _HTTPS_ copiaras al portapapeles el link del repositorio.
 
-Luego, inicia la consola Bash donde quieras clonar el proyecto y tipea **_git clone https://github.com/Rfraga26031999/Universalia-Fraga.git_**
+Luego, inicia la consola Bash donde quieras clonar el proyecto y tipea ```git clone https://github.com/Rfraga26031999/Universalia-Fraga.git```
 
 ### 2) Descomprimir .zip: requiere algun compresor de datos como WinRar o similares.
 
@@ -22,7 +22,7 @@ Dentro de la carpeta _Universalia-Fraga-master_ encontraran un archivo llamado _
 
 #### Recomendación
 Sugiero realizar las instalaciones dentro del entorno virtual ya generado en el proyecto para no tener problemas en el futuro debido a una instalación global, para ello deberán activarlo con el siguiente comando:
-_source env/Scripts/activate_
+```source env/Scripts/activate```
 
 Podrás comprobar si se activó correctamente si arriba de la ruta donde estas posicionado aparece _(env)_
 
@@ -30,17 +30,17 @@ En caso de querer desactivarlo deberás correr el comando _deactivate_ desde la 
 
 A continuación, dejo el comando necesario para instalar desde la consola lo requerido:
 
-- _pip install -r requirements.txt_ (con esto instalaremos todos los requerimientos en una sola linea).
+- ```pip install -r requirements.txt``` (con esto instalaremos todos los requerimientos en una sola linea).
 
 ## Puesta en marcha 🔧
 
 Al descomprimirlo, tendrás que abrir tu consola de preferencia _(PowerShell, Bash, cmd, etc.)_, posicionarte en la carpeta _Universalia-Fraga-master_ y digitar los siguientes comandos:
 
-- _source env/Scripts/activate_ (este comando es necesario para activar el entorno virtual donde fue desarrollado).
+- ```source env/Scripts/activate``` (este comando es necesario para activar el entorno virtual donde fue desarrollado).
 
-- _cd ProyectoFinal_ (para movernos a la carpeta que posee en manage.py).
+- ```cd ProyectoFinal``` (para movernos a la carpeta que posee en manage.py).
 
-- _python manage.py runserver_ (necesario para levantar el servidor y que comience a funcionar).
+- ```python manage.py runserver``` (necesario para levantar el servidor y que comience a funcionar).
 
 Una vez realizado todo esto podrás ver el proyecto en funcionamiento desde tu navegador de preferencia escribiendo en la barra de navegación _localhost:8000_ o _http://127.0.0.1:8000/_
 
