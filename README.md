@@ -4,8 +4,17 @@ Universalia es un proyecto en desarrollo que busca generar un ambiente de admini
 
 
 ## Comenzando 🚀
+Para inicializar el proyecto hay varias opciones, te dejo las dos mas convenientes a mi parecer:
 
-Para inicializar el proyecto deberás ir al repositorio de GitHub, ir al botón desplegable de _Code_ y descargarlo como .zip. Luego, descomprimirlo donde gustes.
+### 1) Git clone: requiere Git.
+
+Deberas ir al repositorio de GitHub donde aparecera un boton desplegable _Code_, una vez ahi en la solapa _HTTPS_ copiaras al portapapeles el link del repositorio.
+
+Luego, inicia la consola Bash donde quieras clonar el proyecto y tipea **_git clone https://github.com/Rfraga26031999/Universalia-Fraga.git_**
+
+### 2) Descomprimir .zip: requiere algun compresor de datos como WinRar o similares.
+
+Para inicializar el proyecto de esta manera deberás ir al repositorio de GitHub, ir al botón desplegable de _Code_ y descargarlo como .zip. Luego, descomprimirlo donde gustes.
 
 ## Pre-requisitos 📋
 
@@ -19,10 +28,9 @@ Podrás comprobar si se activó correctamente si arriba de la ruta donde estas p
 
 En caso de querer desactivarlo deberás correr el comando _deactivate_ desde la carpeta _Proyecto final Python_ donde está localizado el entorno virtual.
 
-A continuación, dejo los comandos necesarios para instalar desde la consola lo requerido:
+A continuación, dejo el comando necesario para instalar desde la consola lo requerido:
 
-- _pip install Pillow_ (es necesario instalar Pillow para el funcionamiento de las imágenes del Avatar y el correcto correr del servidor)
-- _pip install Django_ (con este comando además de instalar _Django_ también instalaremos _tzdata, sqlparse y asgiref_)
+- _pip install -r requirements.txt_ (con esto instalaremos todos los requerimientos en una sola linea).
 
 ## Puesta en marcha 🔧
 
