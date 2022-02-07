@@ -39,8 +39,35 @@ Una vez realizado todo esto podrás ver el proyecto en funcionamiento desde tu n
 #### Aclaración importante antes de continuar.
 Estos comandos fueron probados en Windows 10 y 11, en otros sistemas operativos podrían no funcionar.
 
-## Funcionalidades del proyecto ⚙️
+## Secciones y funcionalidades del proyecto ⚙️
 
+### Inicio
+
+Una vez que estamos en el localhost podremos visualizar la página de Inicio donde arriba a la derecha tendremos un botón llamado _Iniciar_, este nos redireccionara a la vista de _Login_ donde podremos loguearnos en caso de tener un usuario o registrarnos en caso de no tenerlo.
+
+Al loguearnos, tendremos también la posibilidad de desloguearnos en cualquier momento con el botón _Logout_ el cual estará siempre disponible en cada vista y nos llevará a la vista de _Logout_ donde, si quisiéramos, podremos loguearnos nuevamente.
+
+A continuación, veremos arriba en el encabezado las distintas secciones de la barra de navegación _(Inicio, Carreras, Estudiantes, Profesores y Mi perfil)_ a la cuales podremos acceder.
+
+El botón _About me_ nos llevará a una sección aparte donde encontraran una breve introducción acerca de mí.
+
+A su vez, tendremos una barra de búsqueda que nos permitirá buscar por Carrera de interés y visualizar los estudiantes inscriptos en dicha carrera, en caso de no haberlos, simplemente nos traerá un mensaje diciendo _"No hay resultados disponibles"_.
+
+### Carreras
+
+Al ingresar a esta vista podemos observar las distintas carreras disponibles (dándonos la posibilidad de ver el contenido de cada una cliqueando en ellas) y, a su vez, nos da la posibilidad de agregar, borrar y editar según lo queramos.
+
+### Estudiantes
+
+En esta vista visualizamos los estudiantes de Universalia, donde, al igual que en _Carreras_ podemos ver un detalle individual de cada uno y agregar, borrar o editar según lo necesitemos.
+
+### Profesores
+
+Aquí nos mostrara a los profesores que forman parte de Universalia y podremos realizar las mismas acciones dichas anteriormente en las secciones de _Carreras_ y _Estudiantes_.
+
+### Mi perfil
+
+Esta sección nos permite ver datos acerca del usuario logueado y también nos da la oportunidad de cambiar nuestro Avatar o contraseña según lo queramos.
 
 ## Construido con 🛠️
 
