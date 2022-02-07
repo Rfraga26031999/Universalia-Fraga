@@ -101,8 +101,8 @@ Volver el _DEBUG = True_ y el _ALLOWED_HOSTS = []_, de esta manera las imágenes
 
 * **Martín Gotelli Ferenaz** - *El profe, un genio que nos enseñó un montón 😄* - [MartinGotelli](https://github.com/MartinGotelli)
 
-* **Adam Ezequiel Tolosa** - *Mi tutor, que estuvo desde el inicio del curso apoyándome 😉* - []()
+* **Adam Ezequiel Tolosa** - *Mi tutor, que estuvo desde el inicio del curso apoyándome 😉* - [tolosaadam](https://github.com/tolosaadam)
 
-* **Andrés Villanueva** - *Por brindar a la comunidad este modelo de ReadMe tan claro y útil 😊* - [villanuevand](https://github.com/villanuevand)
+* **Andrés Villanueva** - *Por brindar a la comunidad este modelo de README tan claro y útil 😊* - [villanuevand](https://github.com/villanuevand)
 
 ⌨️ con ❤️ por [Rfraga26031999](https://github.com/Rfraga26031999) 😉👋
