@@ -10,10 +10,12 @@
 <a class="btn btn-dark btn-xl rounded-pill mt-5 mb-2" href="{% url 'aboutme' %}">About me</a>
 <div class="container text-center">
   <h3 class="pt-3">¡Bienvenido a Universalia!</h3>
+  {% if user.is_authenticated %}
   <form class="d-flex justify-content-center pb-2" method="POST" action="{% url 'buscar' %}">
     {% csrf_token %}
     <input class="form-control me-2 w-auto mx-1 mb-2" type="search" placeholder="Carrera a buscar" aria-label="Search" name="busqueda">
     <button class="btn btn-primary mb-2" type="submit">Buscar</button>
   </form>
+  {% endif %}
 </div>
 {% endblock %}
