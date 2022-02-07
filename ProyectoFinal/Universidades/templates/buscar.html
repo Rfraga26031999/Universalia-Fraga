@@ -15,22 +15,24 @@
   </div>
   <div class="container w-50 pt-2 bg-dark rounded mt-3 mb-2 pb-2" style="--bs-bg-opacity: .8;">
     {% if busqueda %}
-    <h3 class="pt-3">Estos son los resultados para {{ busqueda }}</h3>
+    <h3 class="pt-3">Estos son los resultados para {{ busqueda }}: </h3>
     <div class="container d-flex justify-content-center ps-5">
       <div class="row">
-        <h2 class="text-start">Los estudiantes inscriptos en la carrera de {{ busqueda }} son: </h2>
-        <ul class="list-unstyled">
-          {% for estudiantes in estudiante %}
-            <li class="text-start">Estudiante: <a href="{% url 'ver_estudiante' estudiantes.id %}" class="fst-italic text-danger text-center text-decoration-none">{{ estudiantes }}</a></li>
-          {% endfor %}
+          {% if estudiante %}
+          <h4 class="text-start">Los estudiantes inscriptos en la carrera de {{ busqueda }} son: </h4>
+          <ul class="list-unstyled">
+            {% for estudiantes in estudiante %}
+              <li class="text-start">Estudiante: <a href="{% url 'ver_estudiante' estudiantes.id %}" class="fst-italic text-danger text-center text-decoration-none">{{ estudiantes }}</a></li>
+            {% endfor %}
+          {% else %}
+              <h4 class="fst-italic">No hay resultados disponibles</h4>
+          {% endif %}
         </ul>
         <div class="container d-flex justify-content-center align-items-center pb-2">
           <a class="d-block btn btn-dark m-1 w-75" href="{% url 'inicio' %}">Volver</a>
         </div>
       </div>
     </div>
-    {% else %}
-      <h3>No hay resultados disponibles</h3>
     {% endif %}
   </div>
 {% endblock %}
