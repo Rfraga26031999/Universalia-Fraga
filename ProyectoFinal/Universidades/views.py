@@ -36,10 +36,13 @@ def buscar(request):
   else:
     respuesta = 'La busqueda no es valida'
   return HttpResponse(respuesta)
+
 class AvatarView:
   def get_context_data(self, **kwargs):
     contexto = super().get_context_data(**kwargs)
-    contexto['avatar_url'] = Avatar.objects.filter(user = self.request.user).last().imagen.url
+    avatares = Avatar.objects.filter(user = self.request.user)
+    if avatares:
+      contexto['avatar_url'] = avatares.last().imagen.url
     return contexto
 
 # PROFESORES
@@ -47,66 +50,66 @@ class ProfesorListView(LoginRequiredMixin, AvatarView, ListView):
   model = Profesor
   template_name = 'profesor/profesores.html'
   context_object_name = 'profesores'
-class ProfesorDetailView(AvatarView, DetailView):
+class ProfesorDetailView(LoginRequiredMixin, AvatarView, DetailView):
   model = Profesor
   template_name = 'profesor/ver_profesor.html'
-class ProfesorCreateView(AvatarView, CreateView):
+class ProfesorCreateView(LoginRequiredMixin, AvatarView, CreateView):
   model = Profesor
   success_url = reverse_lazy('profesores')
   template_name = "profesor/formulario_profesores.html"
   form_class = FormularioProfesores
-class ProfesorUpdateView(AvatarView, UpdateView):
+class ProfesorUpdateView(LoginRequiredMixin, AvatarView, UpdateView):
   model = Profesor
   success_url = reverse_lazy('profesores')
   fields = ['nombre', 'apellido', 'email', 'catedra', 'materia_dictada', 'edad', 'dni']
   template_name = "profesor/editar_profesor.html"
-class ProfesorDeleteView(AvatarView, DeleteView):
+class ProfesorDeleteView(LoginRequiredMixin, AvatarView, DeleteView):
   model = Profesor
   success_url = reverse_lazy('profesores')
   template_name = 'profesor/borrar_profesor.html'
 
 # ESTUDIANTES
-class EstudianteListView(AvatarView, ListView):
+class EstudianteListView(LoginRequiredMixin, AvatarView, ListView):
   model = Estudiante
   template_name = 'estudiante/estudiantes.html'
   context_object_name = 'estudiantes'
-class EstudianteDetailView(AvatarView, DetailView):
+class EstudianteDetailView(LoginRequiredMixin, AvatarView, DetailView):
   model = Estudiante
   template_name = 'estudiante/ver_estudiante.html'
-class EstudianteCreateView(AvatarView, CreateView):
+class EstudianteCreateView(LoginRequiredMixin, AvatarView, CreateView):
   model = Estudiante
   success_url = reverse_lazy('estudiantes')
   template_name = "estudiante/formulario_estudiantes.html"
   form_class = FormularioEstudiantes
-class EstudianteUpdateView(AvatarView, UpdateView):
+class EstudianteUpdateView(LoginRequiredMixin, AvatarView, UpdateView):
   model = Estudiante
   success_url = reverse_lazy('estudiantes')
   fields = ['nombre', 'apellido', 'email', 'carrera', 'edad', 'dni', 'legajo']
   template_name = "estudiante/editar_estudiante.html"
-class EstudianteDeleteView(AvatarView, DeleteView):
+class EstudianteDeleteView(LoginRequiredMixin, AvatarView, DeleteView):
   model = Estudiante
   success_url = reverse_lazy('estudiantes')
   template_name = 'estudiante/borrar_estudiante.html'
 
 # CARRERAS
-class CarreraListView(AvatarView, ListView):
+class CarreraListView(LoginRequiredMixin, AvatarView, ListView):
   model = Carrera
   template_name = 'carrera/carreras.html'
   context_object_name = 'carreras'
-class CarreraDetailView(AvatarView, DetailView):
+class CarreraDetailView(LoginRequiredMixin, AvatarView, DetailView):
   model = Carrera
   template_name = 'carrera/ver_carrera.html'
-class CarreraCreateView(AvatarView, CreateView):
+class CarreraCreateView(LoginRequiredMixin, AvatarView, CreateView):
   model = Carrera
   success_url = reverse_lazy('carreras')
   template_name = "carrera/formulario_carreras.html"
   form_class = FormularioCarreras
-class CarreraUpdateView(AvatarView, UpdateView):
+class CarreraUpdateView(LoginRequiredMixin, AvatarView, UpdateView):
   model = Carrera
   success_url = reverse_lazy('carreras')
   fields = ['carrera', 'duracion', 'facultad', 'cantidad_materias']
   template_name = "carrera/editar_carreras.html"
-class CarreraDeleteView(AvatarView, DeleteView):
+class CarreraDeleteView(LoginRequiredMixin, AvatarView, DeleteView):
   model = Carrera
   success_url = reverse_lazy('carreras')
   template_name = 'carrera/borrar_carrera.html'

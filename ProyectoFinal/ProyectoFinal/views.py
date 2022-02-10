@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 from Universidades.views import AvatarView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 def login_request(request):
   if request.method == 'POST':
@@ -33,7 +34,7 @@ class UserCreateView(CreateView):
   template_name = 'usuario/registro.html'
   form_class = UserRegisterForm
 
-class UserChangeView(AvatarView, UpdateView):
+class UserChangeView(LoginRequiredMixin, AvatarView, UpdateView):
   form_class = UserProfileForm
   template_name = 'usuario/miperfil.html'
   success_url = reverse_lazy('inicio')
